@@ -3,10 +3,15 @@
 @tailwind utilities;
 
 /* tailwindの設定で上書きされてしまうので、importantを設定する */
-.amplify-button--primary {
+/* .amplify-button--primary {
   background-color: var(
     --amplify-components-button-primary-background-color
   ) !important;
+} */
+
+.amplify-button--primary {
+  background-color: #E31E24 !important; /* rojo granate */
+  color: #fff !important; /* texto blanco para contraste */
 }
 
 /* Forcing line breaks in code blocks */
