@@ -166,10 +166,10 @@ const ChatPage: React.FC = () => {
   const inputBotParams = useMemo(() => {
     return botId
       ? {
-          botId: botId,
-          hasKnowledge: bot?.hasKnowledge ?? false,
-          hasAgent: bot?.hasAgent ?? false,
-        }
+        botId: botId,
+        hasKnowledge: bot?.hasKnowledge ?? false,
+        hasAgent: bot?.hasAgent ?? false,
+      }
       : undefined;
   }, [bot?.hasKnowledge, botId, bot?.hasAgent]);
 
@@ -453,16 +453,23 @@ const ChatPage: React.FC = () => {
   }, [bot]);
 
   return (
+
     <div
       className="relative flex h-full flex-1 flex-col"
       onDragOver={onDragOver}
       onDrop={endDnd}
       onDragEnd={endDnd}>
+      {/* Cambios Realizados para personalización de Applying */}
       <div className="flex-1 overflow-hidden">
         <div className="sticky top-0 z-10 mb-1.5 flex h-14 w-full items-center justify-between border-b border-gray bg-aws-paper-light p-2 dark:bg-aws-paper-dark">
           <div className="flex w-full justify-between">
             <div className="p-2">
-              <div className="mr-10 font-bold">{pageTitle}</div>
+              <img
+                src="/images/logo.png"
+                alt="Logo"
+                className="h-10 w-10 object-contain"
+              />
+              {/* <div className="mr-10 font-bold">{pageTitle}</div> */}
               <div className="text-xs font-thin text-dark-gray dark:text-light-gray">
                 {description}
               </div>
@@ -538,11 +545,10 @@ const ChatPage: React.FC = () => {
                   {messages?.map((message, idx, array) => (
                     <div
                       key={idx}
-                      className={`${
-                        message.role === 'assistant'
-                          ? 'bg-aws-squid-ink-light/5 dark:bg-aws-squid-ink-dark/35'
-                          : ''
-                      }`}>
+                      className={`${message.role === 'assistant'
+                        ? 'bg-aws-squid-ink-light/5 dark:bg-aws-squid-ink-dark/35'
+                        : ''
+                        }`}>
                       <ChatMessageWithRelatedDocuments
                         chatContent={message}
                         isStreaming={postingMessage && idx + 1 === array.length}

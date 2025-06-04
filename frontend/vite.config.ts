@@ -22,7 +22,7 @@ export default defineConfig({
         description: 'AWS-native chatbot using Bedrock + Claude',
         start_url: '/index.html',
         display: 'standalone',
-        theme_color: '#232F3E',
+        theme_color: '#e01eb7',
         icons: [
           {
             src: '/images/bedrock_icon_72.png',

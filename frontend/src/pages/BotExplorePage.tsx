@@ -127,6 +127,7 @@ const BotExplorePage: React.FC = () => {
         }}
       />
       <div className="flex h-full justify-center">
+        <div>HOLA</div>
         <div className="w-full max-w-screen-xl px-4 lg:w-4/5">
           <div className="h-1/2 w-full pt-8">
             <div className="flex items-end justify-between">
