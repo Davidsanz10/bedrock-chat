@@ -465,7 +465,7 @@ const ChatPage: React.FC = () => {
           <div className="flex w-full justify-between">
             <div className="p-2">
               <img
-                src="/images/logo.png"
+                src="favicon.png"
                 alt="Logo"
                 className="h-10 w-10 object-contain"
               />
