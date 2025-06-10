@@ -452,6 +452,7 @@ const ChatPage: React.FC = () => {
     return isActiveModelsEmpty ? defaultActiveModels : bot.activeModels;
   }, [bot]);
 
+  const logoUrl = import.meta.env.VITE_LOGO_URL || "favicon.png";
   return (
 
     <div
@@ -465,11 +466,10 @@ const ChatPage: React.FC = () => {
           <div className="flex w-full justify-between">
             <div className="p-2">
               <img
-                src="favicon.png"
+                src={logoUrl}
                 alt="Logo"
                 className="h-10 w-10 object-contain"
               />
-              {/* <div className="mr-10 font-bold">{pageTitle}</div> */}
               <div className="text-xs font-thin text-dark-gray dark:text-light-gray">
                 {description}
               </div>
