@@ -6,6 +6,7 @@ import React, {
   useState,
   useRef,
 } from 'react';
+
 import InputChatContent from '../components/InputChatContent';
 import useChat from '../hooks/useChat';
 import { AttachmentType } from '../hooks/useChat';
@@ -127,7 +128,13 @@ const ChatPage: React.FC = () => {
   } = useBotSummary(botId ?? undefined);
 
   const [pageTitle, setPageTitle] = useState('');
+
+  // const [setPageTitle] = useState(''); 
   const [isAvailabilityBot, setIsAvailabilityBot] = useState(false);
+
+  useEffect(() => {
+    document.title = pageTitle;
+  }, [pageTitle]);
 
   useEffect(() => {
     setIsAvailabilityBot(false);
